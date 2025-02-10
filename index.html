@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+	<title>Advancing</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="column has-text-centered">
+    <!-- <h1 class="title is-1 publication-title"> <b>SpeechTokenizer:</b>  </h1> -->
+    <h3 class="title is-2 publication-title"> <b>Advancing Speech Codec with Multi-Scale Residual Networks and Auditory Deep Feature Losses</b></h3>
+    </div>
+
+</div>
+
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Overview</h2>
+        </div>
+    </div>
+    <p style="font-size: 18px;">
+      Recently, neural speech codecs have significantly surpassed traditional codecs in reconstructing high-definition speech at lower bitrates. However, existing neural speech codecs typically rely on basic residual networks and are primarily trained using specific time-domain or frequency-domain reconstruction loss functions. As a result, they fail to capture as much information as possible for reconstruction and do not adequately consider human auditory perception. In this paper, we propose a novel framework, which utilizes a multi-scale residual network to improve coding efficiency. Furthermore, we introduce a series of auditory deep feature losses, further improving the naturalness of the reconstructed speech. In our experiments, both subjective and objective evaluations demonstrate the effectiveness of the proposed framework and deep feature losses. Specifically, our proposed method can achieve high-quality reconstructed speech at a bitrate of 1.5 kbps with a 24 kHz sample rate. 
+    </p>
+
+</div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h3>audio demo:</h3>
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+            <th style="text-align: center">Codec</th>
+            <th style="text-align: center">Raw</th>
+            <th style="text-align: center">1.5 kbps</th>
+            <th style="text-align: center">3 kbps</th>
+            <th style="text-align: center">6 kbps</th>
+			</tr>
+			</thead>
+			<tbody>
+
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>Proposed</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/raw/raw.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/proposed/p_1.5k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/proposed/p_3k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/proposed/p_6k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+        
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>EnCodec</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/raw/raw.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/encodec/encodec_1.5k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/encodec/encodec_3k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/encodec/encodec_6k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>HiFi-Codec</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/raw/raw.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/hifi/hificodec_1.5k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/hifi/hificodec_3k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/hifi/hificodec_6k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>Descript-Audio-Codec</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/raw/raw.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/dac/dac_1.5k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/dac/dac_3k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="reconstruction/dac/dac_6k.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>    
+
+            </tbody>
+        </table>
+    </div>
+</div>
